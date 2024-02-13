@@ -41,12 +41,26 @@ To get started with Local Multimodal AI Chat, clone the repository and follow th
 4. **Setting Up Local Models**: Download the models you want to implement. [Here](https://huggingface.co/mys/ggml_llava-v1.5-7b/tree/main) is the llava model I used for image chat (ggml-model-q5_k.gguf and mmproj-model-f16.gguf). 
 And the [quantized mistral model](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF) form TheBloke.
 
+   **You can also run the provided scripts to automatically download**:
+   - Linux/Mac: ```bash models/download_models.sh```
+   - Windows powershell: ```.models/download_models.ps1```
+
 5. **Customize config file**: Check the config file and change accordingly to the models you downloaded.
 
 6. **Enter commands in terminal**: 
    1. ```python3 database_operations.py``` This will initialize the sqlite database for the chat sessions.
    2. ```streamlit run app.py```
 
+### With Docker
+1. Download Models
+2. ```docker build ./docker/ -t multimodel_ai_chat```
+3. Linux/Mac: ```docker run -p 8501:8501 -v $(pwd):/app multimodel_ai_chat```
+
+   Windows CMD: ```docker run -p 8501:8501 -v %cd%:/app multimodel_ai_chat```
+
+   Windows Powershell: ```docker run -p 8501:8501 -v "$(pwd):/app" multimodel_ai_chat```
+
+   **For GPU support add**: ```--gpus all```
 
 ## Changelog
 ### 10.02.2024:
