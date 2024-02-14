@@ -43,7 +43,7 @@ And the [quantized mistral model](https://huggingface.co/TheBloke/Mistral-7B-Ins
 
    **You can also run the provided scripts to automatically download**:
    - Linux/Mac: ```bash models/download_models.sh```
-   - Windows powershell: ```.models/download_models.ps1```
+   - Windows powershell: ```.models/download_models.ps1``` (You might need to first run ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser```)
 
 5. **Customize config file**: Check the config file and change accordingly to the models you downloaded.
 
